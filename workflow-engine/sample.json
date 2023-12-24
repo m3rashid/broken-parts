@@ -1,0 +1,33 @@
+{
+	"name": "Sample Workflow",
+	"description": "Workflow",
+	"trigger": "register_user",
+	"job": {
+		"nodes": [
+			{
+				"id": "1",
+				"type": "calculate",
+				"meta": {
+					"num": 1
+				}
+			},
+			{
+				"id": "2",
+				"type": "calculate",
+				"meta": {
+					"num": 2
+				}
+			},
+			{
+				"id": "3",
+				"type": "end_task",
+				"meta": {
+					"result": 0
+				}
+			}
+		],
+		"edges": [
+			{ "from": ["1", "2"], "to": ["3"], "type": "add" }
+		]
+	}
+}
